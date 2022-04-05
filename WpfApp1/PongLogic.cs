@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PongGame
 {
     
-    public enum Controls { Left,Right}
+   
 
     public class PongLogic : IPongLogic
     {
@@ -16,14 +16,34 @@ namespace PongGame
         static Random r = new Random();
         public Ball ActualBall { get; set; }
         public Wall ActualWall { get; set; }
+        public event EventHandler Changed;
+        public event EventHandler GameOver;
 
         public Player ActualPlayer { get; set; }
+
+        public enum Controls { Left, Right }
+        public void Control(Controls control)
+        {
+            ;
+            switch (control)
+            {
+                case Controls.Left:
+                    ActualPlayer.CenterX -= 10;
+                    break;
+                case Controls.Right:
+                    ActualPlayer.CenterX += 10;
+                    break;
+                default:
+                    break;
+            }
+            Changed?.Invoke(this, null);
+        }
 
         public PongLogic(int areawidth, int areaheight)
         {
             this.areawidth = areawidth;
             this.areaheight = areaheight;
-            this.ActualBall = new Ball(r.Next(40, areawidth - 40), r.Next(40, areaheight - 40), 20, 1, 1);
+            this.ActualBall = new Ball(r.Next(40, areawidth - 40), r.Next(40, areaheight - 40), 20, 4, 4);
             this.ActualWall = new Wall(areawidth,areaheight);
             this.ActualPlayer = new Player(areawidth, areaheight);
         }

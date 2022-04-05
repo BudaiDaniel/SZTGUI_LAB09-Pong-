@@ -23,6 +23,7 @@ namespace PongGame
             {
                 drawingContext.DrawGeometry(Brushes.Black, null, pongLogic.ActualWall.Area);
                 drawingContext.DrawGeometry(Brushes.Green,null,pongLogic.ActualBall.Area);
+                drawingContext.DrawGeometry(Brushes.Aqua, null, pongLogic.ActualPlayer.Area);
                 
             }
         }

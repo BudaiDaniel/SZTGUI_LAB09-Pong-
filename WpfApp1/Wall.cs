@@ -24,7 +24,7 @@ namespace PongGame
         {
             get
             {
-                return new RectangleGeometry(new Rect(0, displayHeight, displayWidth, 10));
+                return new RectangleGeometry(new Rect(0, displayHeight-50, displayWidth, 10));
             }
         }
 

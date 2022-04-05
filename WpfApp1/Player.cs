@@ -14,6 +14,8 @@ namespace PongGame
         private int displayWidth;
         private int centerX;
         private int centerY;
+        public int CenterX { get; set; }
+        public int CenterY { get; set; }
 
         private int SpeedX;
 
@@ -22,14 +24,19 @@ namespace PongGame
         {
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
+            centerX = displayWidth / 2;
+            centerY = displayHeight - 57;
+            
         }
 
         public override Geometry Area
         {
             get
             {
-                return new RectangleGeometry(new Rect(displayWidth/2, displayHeight-10, displayWidth/10, 5));
+                return new RectangleGeometry(new Rect(centerX, centerY, displayWidth/10, 5));
             }
         }
+
+  
     }
 }

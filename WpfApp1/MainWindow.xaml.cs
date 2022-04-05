@@ -23,6 +23,7 @@ namespace PongGame
     public partial class MainWindow : Window
     {
         DispatcherTimer dt;
+        PongLogic logic;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace PongGame
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var logic = new PongLogic((int)this.ActualWidth, (int)this.ActualHeight);
+            logic = new PongLogic((int)this.ActualWidth, (int)this.ActualHeight);
             Display.SetupLogic(logic);
             Display.InvalidateVisual();
             dt = new DispatcherTimer();
@@ -47,6 +48,18 @@ namespace PongGame
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
 
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                logic.Control(PongLogic.Controls.Left);
+            }
+            else if (e.Key == Key.Right)
+            {
+                logic.Control(PongLogic.Controls.Right);
+            }
         }
     }
 }
