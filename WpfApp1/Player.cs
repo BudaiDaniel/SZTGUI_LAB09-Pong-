@@ -8,13 +8,15 @@ using System.Windows.Media;
 
 namespace PongGame
 {
-    public class Wall : GameItem
+    public class Player : GameItem
     {
-        private int displayWidth;
         private int displayHeight;
+        private int displayWidth;
+        private int centerX;
+        private int centerY;
 
 
-        public Wall(int displayWidth,int displayHeight)
+        public Player(int displayWidth, int displayHeight)
         {
             this.displayWidth = displayWidth;
             this.displayHeight = displayHeight;
@@ -24,9 +26,8 @@ namespace PongGame
         {
             get
             {
-                return new RectangleGeometry(new Rect(0, displayHeight, displayWidth, 5));
+                return new RectangleGeometry(new Rect(displayWidth/2, displayHeight-10, displayWidth, 5));
             }
         }
-
     }
 }
