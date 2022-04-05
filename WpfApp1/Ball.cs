@@ -34,7 +34,8 @@ namespace PongGame
 
         public void Collision()
         {
-
+            speedX *= -1;
+            speedY *= -1;
         }
        
 
