@@ -11,7 +11,20 @@ namespace PongGame
     public class Ball : GameItem
     {
         private int centerX;
+
+        public int CenterX
+        {
+            get { return centerX; }
+            set { centerX = value; }
+        }
         private int centerY;
+
+        public int CenterY
+        {
+            get { return centerY; }
+            set { centerY = value; }
+        }
+
         private int radius;
         private Vector speed;
 
@@ -30,14 +43,13 @@ namespace PongGame
             centerY += (int)speed.Y;
         }
 
-        public void CollisionY()
+        public void Collision()
         {
-            speed.Y *= -1;
+            speed.X = speed.X * -1;
+            speed.Y = speed.Y * -1;
         }
-        public void CollisionX()
-        {
-            speed.X *= -1;
-        }
+        
+        
        
 
         public override Geometry Area 
