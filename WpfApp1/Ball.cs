@@ -30,14 +30,13 @@ namespace PongGame
             centerY += (int)speed.Y;
         }
 
-        public void CollisionY()
+        public void Collision()
         {
-            speed.Y *= -1;
+            speed.X = speed.X * -1;
+            speed.Y = speed.Y * -1;
         }
-        public void CollisionX()
-        {
-            speed.X *= -1;
-        }
+        
+        
        
 
         public override Geometry Area 
