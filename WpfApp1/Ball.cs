@@ -25,6 +25,17 @@ namespace PongGame
             this.speedX = speedX;
             this.speedY = speedY;
         }
+
+        public void Move()
+        {
+            centerX += speedX;
+            centerY += speedY;
+        }
+
+        public void Collision()
+        {
+
+        }
        
 
         public override Geometry Area 
