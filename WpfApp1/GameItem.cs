@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
-namespace WpfApp1
+namespace PongGame
 {
     abstract class GameItem
     {
