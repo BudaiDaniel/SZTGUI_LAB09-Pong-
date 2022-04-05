@@ -15,6 +15,8 @@ namespace PongGame
         private int centerX;
         private int centerY;
 
+        private int SpeedX;
+
 
         public Player(int displayWidth, int displayHeight)
         {

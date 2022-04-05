@@ -26,15 +26,28 @@ namespace PongGame
         }
 
         private int radius;
-        private Vector speed;
-
-
-        public Ball(int centerX, int centerY, int radius, Vector speed)
+        private int speedy;
+        public int SpeedY
         {
-            this.centerX = centerX;
-            this.centerY = centerY;
+            get { return speedy; }
+            set { speedy = value; }
+        }
+        private int speedx;
+        public int SpeedX
+        {
+            get { return speedx; }
+            set { speedx = value; }
+        }
+
+
+
+        public Ball(int centerX, int centerY, int radius, int speedx,int speedy)
+        {
+            this.CenterX = centerX;
+            this.CenterY = centerY;
             this.radius = radius;
-            this.speed = speed;
+            this.SpeedX = speedx;
+            this.SpeedY = speedy;
         }
 
         public void Move()
@@ -45,15 +58,8 @@ namespace PongGame
 
         public void Collision(int areawidth,int areaheight)
         {
-
-            if (CenterX <= 0 || CenterX > areawidth - 50)
-            {
                 speed.X = speed.X * -1;
-            }
-            if (CenterY <= 0 || CenterY > areaheight - 50)
-            {
                 speed.Y = speed.Y * -1;
-            }
 
         }
         
