@@ -19,5 +19,25 @@ namespace PongGame
             this.ActualBall = new Ball(r.Next(40, areawidth - 40), r.Next(40, areaheight - 40), 20, new System.Windows.Vector(1, 1));
             this.ActualWall = new Wall(areawidth);
         }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        public void TimeStep()
+        {
+
+        }
     }
 }
