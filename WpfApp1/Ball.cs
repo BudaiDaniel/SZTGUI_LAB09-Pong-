@@ -11,7 +11,20 @@ namespace PongGame
     public class Ball : GameItem
     {
         private int centerX;
+
+        public int CenterX
+        {
+            get { return centerX; }
+            set { centerX = value; }
+        }
         private int centerY;
+
+        public int CenterY
+        {
+            get { return centerY; }
+            set { centerY = value; }
+        }
+
         private int radius;
         private Vector speed;
 
