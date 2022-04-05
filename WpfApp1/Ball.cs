@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace PongGame
 {
-    class Ball : GameItem
+    public class Ball : GameItem
     {
         private int centerX;
         private int centerY;
