@@ -17,5 +17,5 @@ namespace PongGame
                     GeometryCombineMode.Intersect, null).GetArea() > 0;
             }
         }
-    }
+    
 }

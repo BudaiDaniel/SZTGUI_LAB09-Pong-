@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace PongGame
 {
-    class Display : FrameworkElement
+    public class Display : FrameworkElement
     {
         IPongLogic pongLogic;
 

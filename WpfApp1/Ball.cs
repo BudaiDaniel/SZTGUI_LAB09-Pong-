@@ -43,10 +43,18 @@ namespace PongGame
             centerY += (int)speed.Y;
         }
 
-        public void Collision()
+        public void Collision(int areawidth,int areaheight)
         {
-            speed.X = speed.X * -1;
-            speed.Y = speed.Y * -1;
+
+            if (CenterX <= 0 || CenterX > areawidth - 50)
+            {
+                speed.X = speed.X * -1;
+            }
+            if (CenterY <= 0 || CenterY > areaheight - 50)
+            {
+                speed.Y = speed.Y * -1;
+            }
+
         }
         
         

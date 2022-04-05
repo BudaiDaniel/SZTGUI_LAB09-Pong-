@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace WpfApp1
+namespace PongGame
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -31,14 +31,14 @@ namespace WpfApp1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var logic = new PongLogic((int)this.ActualWidth, (int)this.ActualHeight);
-            display.SetupLogic(logic);
-            display.InvalidateVisual();
+            Display.SetupLogic(logic);
+            Display.InvalidateVisual();
             dt = new DispatcherTimer();
             dt.Interval = TimeSpan.FromMilliseconds(10);
             dt.Tick += (sender, eventargs) =>
             {
-                logic.TimeStep();
-                display.InvalidateVisual();
+                logic.Timestep();
+                Display.InvalidateVisual();
             };
             dt.Start();
 
