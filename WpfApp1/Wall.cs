@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace PongGame
 {
-    class Wall : GameItem
+    public class Wall : GameItem
     {
         private int displayWidth;
 

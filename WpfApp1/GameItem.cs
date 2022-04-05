@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace PongGame
 {
-    abstract class GameItem
+    public abstract class GameItem
     {
             public abstract Geometry Area { get; }
 
