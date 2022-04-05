@@ -13,29 +13,27 @@ namespace PongGame
         private int centerX;
         private int centerY;
         private int radius;
+        private Vector speed;
 
-        private int speedX;
-        private int speedY;
 
-        public Ball(int centerX, int centerY, int radius, int speedX, int speedY)
+        public Ball(int centerX, int centerY, int radius, Vector speed)
         {
             this.centerX = centerX;
             this.centerY = centerY;
             this.radius = radius;
-            this.speedX = speedX;
-            this.speedY = speedY;
+            this.speed = speed;
         }
 
         public void Move()
         {
-            centerX += speedX;
-            centerY += speedY;
+            centerX += (int)speed.X;
+            centerY += (int)speed.Y;
         }
 
         public void Collision()
         {
-            speedX *= -1;
-            speedY *= -1;
+            speed.X *= -1;
+            speed.Y *= -1;
         }
        
 
