@@ -52,14 +52,14 @@ namespace PongGame
 
         public void Move()
         {
-            centerX += (int)speed.X;
-            centerY += (int)speed.Y;
+            centerX += (int)speedx;
+            centerY += (int)speedy;
         }
 
         public void Collision(int areawidth,int areaheight)
         {
-                speed.X = speed.X * -1;
-                speed.Y = speed.Y * -1;
+                speedx *= -1;
+                speedy *= -1;
 
         }
         

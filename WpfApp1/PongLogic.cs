@@ -23,7 +23,7 @@ namespace PongGame
         {
             this.areawidth = areawidth;
             this.areaheight = areaheight;
-            this.ActualBall = new Ball(r.Next(40, areawidth - 40), r.Next(40, areaheight - 40), 20, new System.Windows.Vector(1, 1));
+            this.ActualBall = new Ball(r.Next(40, areawidth - 40), r.Next(40, areaheight - 40), 20, 1, 1);
             this.ActualWall = new Wall(areawidth,areaheight);
             this.ActualPlayer = new Player(areawidth, areaheight);
         }
@@ -31,12 +31,11 @@ namespace PongGame
         {
             if (ActualBall.CenterX <= 0 || ActualBall.CenterX > areawidth - 30)
             {
-                ActualBall.Collision(areawidth, areaheight);
+                ActualBall.SpeedX *= -1;
             }
             if (ActualBall.CenterY <= 0 || ActualBall.CenterY > areaheight - 70)
             {
-                
-
+                ActualBall.SpeedY *= -1;
             }
         }
 
